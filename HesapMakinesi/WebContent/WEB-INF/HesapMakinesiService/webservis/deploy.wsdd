@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from HesapMakinesiService WSDL service -->
+
+  <service name="HesapMakinesi" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservis"/>
+      <parameter name="wsdlServiceElement" value="HesapMakinesiService"/>
+      <parameter name="schemaQualified" value="http://webservis"/>
+      <parameter name="wsdlServicePort" value="HesapMakinesi"/>
+      <parameter name="className" value="webservis.HesapMakinesi"/>
+      <parameter name="wsdlPortType" value="HesapMakinesi"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://webservis" xmlns:retNS="http://webservis" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="cikarma" qname="operNS:cikarma" returnQName="retNS:cikarmaReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://webservis" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:a" type="tns:int"/>
+        <parameter xmlns:pns="http://webservis" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:b" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservis" xmlns:retNS="http://webservis" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="carpma" qname="operNS:carpma" returnQName="retNS:carpmaReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://webservis" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:a" type="tns:int"/>
+        <parameter xmlns:pns="http://webservis" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:b" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservis" xmlns:retNS="http://webservis" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="toplama" qname="operNS:toplama" returnQName="retNS:toplamaReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://webservis" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:a" type="tns:int"/>
+        <parameter xmlns:pns="http://webservis" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:b" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservis" xmlns:retNS="http://webservis" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="bolme" qname="operNS:bolme" returnQName="retNS:bolmeReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://webservis" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:a" type="tns:int"/>
+        <parameter xmlns:pns="http://webservis" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:b" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="toplama carpma cikarma bolme"/>
+
+  </service>
+</deployment>
