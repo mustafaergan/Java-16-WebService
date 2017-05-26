@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://DefaultNamespace" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://DefaultNamespace" xmlns:intf="http://DefaultNamespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://DefaultNamespace" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="guzelestir">
+    <complexType>
+     <sequence>
+      <element name="veri" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="guzelestirResponse">
+    <complexType>
+     <sequence>
+      <element name="guzelestirReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="guzelestirRequest">
+
+      <wsdl:part element="impl:guzelestir" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="guzelestirResponse">
+
+      <wsdl:part element="impl:guzelestirResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Gonder">
+
+      <wsdl:operation name="guzelestir">
+
+         <wsdl:input message="impl:guzelestirRequest" name="guzelestirRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:guzelestirResponse" name="guzelestirResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="GonderSoapBinding" type="impl:Gonder">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="guzelestir">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="guzelestirRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="guzelestirResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="GonderService">
+
+      <wsdl:port binding="impl:GonderSoapBinding" name="Gonder">
+
+         <wsdlsoap:address location="http://localhost:8083/SunucuWS/services/Gonder"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

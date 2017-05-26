@@ -1,59 +1,59 @@
 /**
- * HesapMakinesiServiceLocator.java
+ * GonderServiceLocator.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package webservis;
+package DefaultNamespace;
 
-public class HesapMakinesiServiceLocator extends org.apache.axis.client.Service implements webservis.HesapMakinesiService {
+public class GonderServiceLocator extends org.apache.axis.client.Service implements DefaultNamespace.GonderService {
 
-    public HesapMakinesiServiceLocator() {
+    public GonderServiceLocator() {
     }
 
 
-    public HesapMakinesiServiceLocator(org.apache.axis.EngineConfiguration config) {
+    public GonderServiceLocator(org.apache.axis.EngineConfiguration config) {
         super(config);
     }
 
-    public HesapMakinesiServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+    public GonderServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
     }
 
-    // Use to get a proxy class for HesapMakinesi
-    private java.lang.String HesapMakinesi_address = "http://localhost:8083/HesapMakinesi/services/HesapMakinesi";
+    // Use to get a proxy class for Gonder
+    private java.lang.String Gonder_address = "http://localhost:8083/SunucuWS/services/Gonder";
 
-    public java.lang.String getHesapMakinesiAddress() {
-        return HesapMakinesi_address;
+    public java.lang.String getGonderAddress() {
+        return Gonder_address;
     }
 
     // The WSDD service name defaults to the port name.
-    private java.lang.String HesapMakinesiWSDDServiceName = "HesapMakinesi";
+    private java.lang.String GonderWSDDServiceName = "Gonder";
 
-    public java.lang.String getHesapMakinesiWSDDServiceName() {
-        return HesapMakinesiWSDDServiceName;
+    public java.lang.String getGonderWSDDServiceName() {
+        return GonderWSDDServiceName;
     }
 
-    public void setHesapMakinesiWSDDServiceName(java.lang.String name) {
-        HesapMakinesiWSDDServiceName = name;
+    public void setGonderWSDDServiceName(java.lang.String name) {
+        GonderWSDDServiceName = name;
     }
 
-    public webservis.HesapMakinesi getHesapMakinesi() throws javax.xml.rpc.ServiceException {
+    public DefaultNamespace.Gonder getGonder() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
-            endpoint = new java.net.URL(HesapMakinesi_address);
+            endpoint = new java.net.URL(Gonder_address);
         }
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getHesapMakinesi(endpoint);
+        return getGonder(endpoint);
     }
 
-    public webservis.HesapMakinesi getHesapMakinesi(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public DefaultNamespace.Gonder getGonder(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            webservis.HesapMakinesiSoapBindingStub _stub = new webservis.HesapMakinesiSoapBindingStub(portAddress, this);
-            _stub.setPortName(getHesapMakinesiWSDDServiceName());
+            DefaultNamespace.GonderSoapBindingStub _stub = new DefaultNamespace.GonderSoapBindingStub(portAddress, this);
+            _stub.setPortName(getGonderWSDDServiceName());
             return _stub;
         }
         catch (org.apache.axis.AxisFault e) {
@@ -61,8 +61,8 @@ public class HesapMakinesiServiceLocator extends org.apache.axis.client.Service 
         }
     }
 
-    public void setHesapMakinesiEndpointAddress(java.lang.String address) {
-        HesapMakinesi_address = address;
+    public void setGonderEndpointAddress(java.lang.String address) {
+        Gonder_address = address;
     }
 
     /**
@@ -72,9 +72,9 @@ public class HesapMakinesiServiceLocator extends org.apache.axis.client.Service 
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (webservis.HesapMakinesi.class.isAssignableFrom(serviceEndpointInterface)) {
-                webservis.HesapMakinesiSoapBindingStub _stub = new webservis.HesapMakinesiSoapBindingStub(new java.net.URL(HesapMakinesi_address), this);
-                _stub.setPortName(getHesapMakinesiWSDDServiceName());
+            if (DefaultNamespace.Gonder.class.isAssignableFrom(serviceEndpointInterface)) {
+                DefaultNamespace.GonderSoapBindingStub _stub = new DefaultNamespace.GonderSoapBindingStub(new java.net.URL(Gonder_address), this);
+                _stub.setPortName(getGonderWSDDServiceName());
                 return _stub;
             }
         }
@@ -94,8 +94,8 @@ public class HesapMakinesiServiceLocator extends org.apache.axis.client.Service 
             return getPort(serviceEndpointInterface);
         }
         java.lang.String inputPortName = portName.getLocalPart();
-        if ("HesapMakinesi".equals(inputPortName)) {
-            return getHesapMakinesi();
+        if ("Gonder".equals(inputPortName)) {
+            return getGonder();
         }
         else  {
             java.rmi.Remote _stub = getPort(serviceEndpointInterface);
@@ -105,7 +105,7 @@ public class HesapMakinesiServiceLocator extends org.apache.axis.client.Service 
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://webservis", "HesapMakinesiService");
+        return new javax.xml.namespace.QName("http://DefaultNamespace", "GonderService");
     }
 
     private java.util.HashSet ports = null;
@@ -113,7 +113,7 @@ public class HesapMakinesiServiceLocator extends org.apache.axis.client.Service 
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://webservis", "HesapMakinesi"));
+            ports.add(new javax.xml.namespace.QName("http://DefaultNamespace", "Gonder"));
         }
         return ports.iterator();
     }
@@ -123,8 +123,8 @@ public class HesapMakinesiServiceLocator extends org.apache.axis.client.Service 
     */
     public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
         
-if ("HesapMakinesi".equals(portName)) {
-            setHesapMakinesiEndpointAddress(address);
+if ("Gonder".equals(portName)) {
+            setGonderEndpointAddress(address);
         }
         else 
 { // Unknown Port Name
